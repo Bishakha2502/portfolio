@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bishakha Portfolio</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="Pstyle.css">
+</head>
+
+<body>
+    <!-- ===== Navbar ===== -->
+    <header class="navbar">
+        <div class="logo">Bishakha | Portfolio</div>
+        <ul class="navlist">
+            <li><a href="index1.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </header>
+
+    <!-- ===== Home Section ===== -->
+    <section id="home" class="home-section">
+        <div class="home-content">
+            <!-- Your photo -->
+            <div class="home-image">
+                <img src="my_pic2.jpg" alt="Bishakha Prasad">
+            </div>
+
+            <h1 class="home-name">Hello, I'm <span class="home2">Bishakha Prasad</span></h1>
+            <h2 class="home-role">A Passionate <span class="typing"></span></h2>
+
+            <p class="home-detail">
+                As an Electronics and Communication Engineering student, I explore both hardware and software,
+                bridging innovation with functionality. I’m passionate about coding, solving problems, and creating
+                digital experiences that make a difference.
+            </p>
+
+            <div class="btn-container">
+                <button class="btn-primary" onclick="location.href='contact.html'">Hire Me</button>
+                <button class="btn-secondary" onclick="location.href='projects.html'">View Projects</button>
+            </div>
+
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/bishakha-prasad-864885325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/Bishakha2502" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.instagram.com/_.bishakha.___?igsh=dGhjbWV0NnV6NW83" target="_blank"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.snapchat.com/add/bishakhap201822?share_id=KjONIKB6ZJo&locale=en-US" target="_blank"><i class="fa-brands fa-snapchat"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>© 2025 Bishakha Portfolio. All Rights Reserved.</footer>
+
+    <!-- ===== Typing Animation Script ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const typingSpan = document.querySelector('.typing');
+            if (!typingSpan) return;
+
+            const textArray = ["Software Developer", "Problem Solver", "Creative Coder"];
+            let typingIndex = 0;
+            let charIndex = 0;
+            const typingSpeed = 120;
+            const erasingSpeed = 80;
+            const delayBetween = 1500;
+
+            function type() {
+                const current = textArray[typingIndex];
+                if (charIndex < current.length) {
+                    typingSpan.textContent += current.charAt(charIndex++);
+                    setTimeout(type, typingSpeed);
+                } else {
+                    setTimeout(erase, delayBetween);
+                }
+            }
+
+            function erase() {
+                if (charIndex > 0) {
+                    typingSpan.textContent = typingSpan.textContent.slice(0, -1);
+                    charIndex--;
+                    setTimeout(erase, erasingSpeed);
+                } else {
+                    typingIndex = (typingIndex + 1) % textArray.length;
+                    setTimeout(type, typingSpeed);
+                }
+            }
+
+            setTimeout(type, 700);
+        });
+    </script>
+</body>
+
+</html>
